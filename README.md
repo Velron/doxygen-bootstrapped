@@ -1,7 +1,7 @@
 doxygen-bootstrapped
 ===================
 
-Customize doxygen output to use the twitter bootstrap framework (v3.2.0)
+Customize doxygen (v1.8.8) output to use the twitter bootstrap framework (v3.2.0)
 
 I took the work done by CoActionOS and extended it further. 
 [Credit](http://coactionos.com/embedded%20design%20tips/2014/01/07/Tips-Integrating-Doxygen-and-Bootstrap/)
