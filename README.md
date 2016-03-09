@@ -41,5 +41,7 @@ We have also modified the HTML header/footer to load the Bootstrap css/javascrip
 <script type="text/javascript" src="doxy-boot.js"></script>
 ```
 
-## TODO:
--Not working when Doxygen sidebar is enabled.
+## Todo List
+* Menu is not correctly displayed when Doxygen sidebar is enabled.
+* Class index is incorrectly displayed.
+* Search engine is not fully responsive.
