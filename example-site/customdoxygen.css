@@ -253,3 +253,28 @@ blockquote {
     padding: 0 12px 0 16px;
 }
 
+/*---------------- Search Box */
+
+#MSearchBox {
+    top: 7px;
+    margin-bottom: 2em;
+}
+
+/*---------------- Search filter selection */
+
+#MSearchSelectWindow {
+    position: fixed;
+}
+
+/*---------------- Search results window */
+
+iframe#MSearchResults {
+    width: 100%;
+    height: 15em;
+}
+
+#MSearchResultsWindow {
+    position: static;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
