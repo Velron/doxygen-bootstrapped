@@ -1,16 +1,97 @@
-/* Custom Look and feel - Can be edited
------------------------------------ */
+h1, .h1, h2, .h2, h3, .h3{
+    font-weight: 200 !important;
+}
+
 #navrow1, #navrow2, #navrow3, #navrow4, #navrow5{
     border-bottom: 1px solid #EEEEEE;
 }
 
 .adjust-right {
-	margin-left: 30px !important;
-	font-size: 1.15em !important;
+margin-left: 30px !important;
+font-size: 1.15em !important;
+}
+.navbar{
+ border: 0px solid #222 !important;
 }
 
-/* DOXYGEN Code Styles - These are from doxygen but can be changed to fit the theme
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+    font-size: 0.9em;
+    padding: 8px 0px;
+    background-color: #f5f5f5;
+}
+
+.footer-row {
+    line-height: 44px;
+}
+
+#footer > .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-follow-icon {
+    margin-left: 3px;
+    text-decoration: none !important;
+}
+
+.footer-follow-icon img {
+    width: 20px;
+}
+
+.footer-link {
+    padding-top: 5px;
+    display: inline-block;
+    color: #999999;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+
+@media (min-width: 992px) {
+    .footer-row {
+        text-align: left;
+    }
+
+    .footer-icons {
+        text-align: right;
+    }
+}
+@media (max-width: 991px) {
+    .footer-row {
+        text-align: center;
+    }
+
+    .footer-icons {
+        text-align: center;
+    }
+}
+
+/* DOXYGEN Code Styles
 ----------------------------------- */
+
 
 a.qindex {
     font-weight: bold;
@@ -172,3 +253,28 @@ blockquote {
     padding: 0 12px 0 16px;
 }
 
+/*---------------- Search Box */
+
+#MSearchBox {
+    top: 7px;
+    margin-bottom: 2em;
+}
+
+/*---------------- Search filter selection */
+
+#MSearchSelectWindow {
+    position: fixed;
+}
+
+/*---------------- Search results window */
+
+iframe#MSearchResults {
+    width: 100%;
+    height: 15em;
+}
+
+#MSearchResultsWindow {
+    position: static;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

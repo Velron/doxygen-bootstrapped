@@ -4,6 +4,7 @@ $( document ).ready(function() {
     $("div.title").addClass("h1");
 
     $('li > a[href="index.html"] > span').before("<i class='fa fa-cog'></i> ");
+    $('li > a[href="index.html"] > span').text("BioGears");
     $('li > a[href="modules.html"] > span').before("<i class='fa fa-square'></i> ");
     $('li > a[href="namespaces.html"] > span').before("<i class='fa fa-bars'></i> ");
     $('li > a[href="annotated.html"] > span').before("<i class='fa fa-list-ul'></i> ");
@@ -52,8 +53,6 @@ $( document ).ready(function() {
     $("div.ttname").addClass("panel-heading");
     $("div.ttname a").css("color", 'white');
     $("div.ttdef,div.ttdoc,div.ttdeci").addClass("panel-body");
-
-    $('#MSearchBox').parent().remove();
 
     $('div.fragment.well div.line:first').css('margin-top', '15px');
     $('div.fragment.well div.line:last').css('margin-bottom', '15px');
