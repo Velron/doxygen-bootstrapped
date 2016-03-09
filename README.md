@@ -41,5 +41,5 @@ We have also modified the HTML header/footer to load the Bootstrap css/javascrip
 <script type="text/javascript" src="doxy-boot.js"></script>
 ```
 
-## Note
-This hasn't been tested with the search box functionality or with the Doxygen sidebar.
+## TODO:
+-Not working when Doxygen sidebar is enabled.
