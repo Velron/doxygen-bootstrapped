@@ -90,7 +90,29 @@ $( document ).ready(function() {
 		if(getOriginalWidthOfImg($(this)[0]) > $('#content>div.container').width())
 			$(this).css('width', '100%');
 	});
-	
+
+  /* enumerations */
+  $('table.fieldtable').removeClass('fieldtable').addClass('table table-striped table-bordered').each(function(){
+    $(this).prepend('<thead></thead>');
+    $(this).find('tbody > tr:first').prependTo($(this).find('thead'));
+
+    $(this).find('td > span.success').parent().addClass('success');
+    $(this).find('td > span.warning').parent().addClass('warning');
+    $(this).find('td > span.danger').parent().addClass('danger');
+  });
+
+  /* todo list */
+  var todoelements = $('.contents > .textblock > dl.reflist > dt, .contents > .textblock > dl.reflist > dd');
+  for (var i = 0; i < todoelements.length; i += 2) {
+    $('.contents > .textblock').append(
+      '<div class="panel panel-default active">'
+        + "<div class=\"panel-heading todoname\">" + $(todoelements[i]).html() + "</div>"
+        + "<div class=\"panel-body\">" + $(todoelements[i+1]).html() + "</div>"
+      + '</div>');
+  }
+  $('.contents > .textblock > dl').remove();
+
+
 	$(".memitem").removeClass('memitem');
     $(".memproto").removeClass('memproto');
     $(".memdoc").removeClass('memdoc');
