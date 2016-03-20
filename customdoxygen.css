@@ -272,13 +272,24 @@ iframe#MSearchResults {
     border-radius: 4px;
 }
 
-/* enumerations */
-.panel-body thead > tr {
-  background-color: #e0e0e0;
+/* class and file list */
+.directory .icona,
+.directory .arrow {
+  height: auto;
+}
+.directory .icona .icon {
+  height: 16px;
+}
+.directory .icondoc {
+  background-position: 0px -2px;
+}
+.directory td.entry {
+  padding: 7px 8px 6px 8px;
 }
 
-/* todo lists */
-.todoname,
-.todoname a {
-  font-weight: bold;
+.table > tbody > tr > td.memSeparator {
+  line-height: 0;
+}
+.memItemLeft, .memTemplItemLeft {
+  white-space: normal;
 }
