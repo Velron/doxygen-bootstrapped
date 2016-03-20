@@ -91,6 +91,15 @@ $( document ).ready(function() {
 			$(this).css('width', '100%');
 	});
 
+  /* enumerations */
+  $('table.fieldtable').removeClass('fieldtable').addClass('table table-striped table-bordered').each(function(){
+    $(this).prepend('<thead></thead>');
+    $(this).find('tbody > tr:first').prependTo($(this).find('thead'));
+
+    $(this).find('td > span.success').parent().addClass('success');
+    $(this).find('td > span.warning').parent().addClass('warning');
+    $(this).find('td > span.danger').parent().addClass('danger');
+  });
 
   /* todo list */
   var todoelements = $('.contents > .textblock > dl.reflist > dt, .contents > .textblock > dl.reflist > dd');

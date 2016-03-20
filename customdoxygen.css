@@ -172,6 +172,11 @@ blockquote {
     padding: 0 12px 0 16px;
 }
 
+/* enumerations */
+.panel-body thead > tr {
+  background-color: #e0e0e0;
+}
+
 /* todo lists */
 .todoname,
 .todoname a {
