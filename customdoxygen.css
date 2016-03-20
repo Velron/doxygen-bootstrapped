@@ -255,15 +255,8 @@ blockquote {
 
 /*---------------- Search Box */
 
-#MSearchBox {
-    top: 7px;
-    margin-bottom: 2em;
-}
-
-/*---------------- Search filter selection */
-
-#MSearchSelectWindow {
-    position: fixed;
+#search-box {
+  margin: 10px 0px;
 }
 
 /*---------------- Search results window */

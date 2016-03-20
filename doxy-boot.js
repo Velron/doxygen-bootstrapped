@@ -88,7 +88,62 @@ $( document ).ready(function() {
 		if(getOriginalWidthOfImg($(this)[0]) > $('#content>div.container').width())
 			$(this).css('width', '100%');
 	});
-	
+
+
+  // create responsive search box
+
+  $('#MSearchBox').parent().remove();
+
+  var nav_container = $('<div class="row"></div>');
+  $('#navrow1').parent().prepend(nav_container);
+
+  var left_nav = $('<div class="col-md-9"></div>');
+  for (i = 0; i < 6; i++) {
+    var navrow = $('#navrow' + i + ' > ul.tablist').detach();
+    left_nav.append(navrow);
+  }
+  var right_nav = $('<div class="col-md-3"></div>').append('\
+    <div id="search-box" class="input-group">\
+      <div class="input-group-btn">\
+        <button aria-expanded="false" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\
+          <span class="glyphicon glyphicon-search"></span> <span class="caret"></span>\
+        </button>\
+        <ul class="dropdown-menu">\
+        </ul>\
+      </div>\
+      <input id="search-field" class="form-control" accesskey="S" onkeydown="searchBox.OnSearchFieldChange(event);" placeholder="Search ..." type="text">\
+    </div>');
+  $(nav_container).append(left_nav);
+  $(nav_container).append(right_nav);
+
+  $('#MSearchSelectWindow .SelectionMark').remove();
+  var search_selectors = $('#MSearchSelectWindow .SelectItem');
+  for (var i = 0; i < search_selectors.length; i += 1) {
+    var element_a = $('<a href="#"></a>').text($(search_selectors[i]).text());
+
+    element_a.click(function(){
+      $('#search-box .dropdown-menu li').removeClass('active');
+      $(this).parent().addClass('active');
+      searchBox.OnSelectItem($('#search-box li a').index(this));
+      searchBox.Search();
+      return false;
+    });
+
+    var element = $('<li></li>').append(element_a);
+    $('#search-box .dropdown-menu').append(element);
+  }
+  $('#MSearchSelectWindow').remove();
+
+  $('body').append('<div id="MSearchClose"></div>');
+  $('body').append('<div id="MSearchBox"></div>');
+  $('body').append('<div id="MSearchSelectWindow"></div>');
+
+  searchBox.searchLabel = '';
+  searchBox.DOMSearchField = function() {
+    return document.getElementById("search-field");
+  }
+
+
 	$(".memitem").removeClass('memitem');
     $(".memproto").removeClass('memproto');
     $(".memdoc").removeClass('memdoc');
