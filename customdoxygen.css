@@ -172,3 +172,8 @@ blockquote {
     padding: 0 12px 0 16px;
 }
 
+/* todo lists */
+.todoname,
+.todoname a {
+  font-weight: bold;
+}
