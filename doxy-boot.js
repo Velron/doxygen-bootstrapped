@@ -153,6 +153,24 @@ $( document ).ready(function() {
   }
 
 
+  /* search results */
+  var results_iframe = $('#MSearchResults').detach();
+  $('#MSearchResultsWindow')
+    .attr('id', 'search-results-window')
+    .addClass('panel panel-default')
+    .append(
+      '<div class="panel-heading">\
+        <h3 class="panel-title">Search Results</h3>\
+      </div>\
+      <div class="panel-body"></div>'
+    );
+  $('#search-results-window .panel-body').append(results_iframe);
+
+  searchBox.DOMPopupSearchResultsWindow = function() {
+    return document.getElementById("search-results-window");
+  }
+
+
   /* enumerations */
   $('table.fieldtable').removeClass('fieldtable').addClass('table table-striped table-bordered').each(function(){
     $(this).prepend('<thead></thead>');

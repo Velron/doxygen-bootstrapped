@@ -268,15 +268,13 @@ blockquote {
 
 /*---------------- Search results window */
 
+#search-results-window {
+  display: none;
+}
+
 iframe#MSearchResults {
     width: 100%;
     height: 15em;
-}
-
-#MSearchResultsWindow {
-    position: static;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 /* enumerations */
