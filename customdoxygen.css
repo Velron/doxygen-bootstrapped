@@ -258,6 +258,13 @@ blockquote {
 #search-box {
   margin: 10px 0px;
 }
+#search-box .close {
+  display: none;
+  position: absolute;
+  right: 0px;
+  padding: 6px 12px;
+  z-index: 5;
+}
 
 /*---------------- Search results window */
 

@@ -56,17 +56,17 @@ $( document ).ready(function() {
 
     $('div.fragment.well div.line:first').css('margin-top', '15px');
     $('div.fragment.well div.line:last').css('margin-bottom', '15px');
-	
+
 	$('table.doxtable').removeClass('doxtable').addClass('table table-striped table-bordered').each(function(){
 		$(this).prepend('<thead></thead>');
 		$(this).find('tbody > tr:first').prependTo($(this).find('thead'));
-		
+
 		$(this).find('td > span.success').parent().addClass('success');
 		$(this).find('td > span.warning').parent().addClass('warning');
 		$(this).find('td > span.danger').parent().addClass('danger');
 	});
-	
-	
+
+
 
     if($('div.fragment.well div.ttc').length > 0)
     {
@@ -77,20 +77,20 @@ $( document ).ready(function() {
         $(this).contents().appendTo($(this).siblings('.memItemLeft'));
         $(this).siblings('.memItemLeft').attr('align', 'left');
     });
-	
+
 	function getOriginalWidthOfImg(img_element) {
 		var t = new Image();
 		t.src = (img_element.getAttribute ? img_element.getAttribute("src") : false) || img_element.src;
 		return t.width;
 	}
-	
+
 	$('div.dyncontent').find('img').each(function(){
 		if(getOriginalWidthOfImg($(this)[0]) > $('#content>div.container').width())
 			$(this).css('width', '100%');
 	});
 
 
-  // create responsive search box
+  /* responsive search box */
 
   $('#MSearchBox').parent().remove();
 
@@ -111,6 +111,7 @@ $( document ).ready(function() {
         <ul class="dropdown-menu">\
         </ul>\
       </div>\
+      <button id="search-close" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>\
       <input id="search-field" class="form-control" accesskey="S" onkeydown="searchBox.OnSearchFieldChange(event);" placeholder="Search ..." type="text">\
     </div>');
   $(nav_container).append(left_nav);
@@ -134,6 +135,10 @@ $( document ).ready(function() {
   }
   $('#MSearchSelectWindow').remove();
 
+  $('#search-box .close').click(function (){
+    searchBox.CloseResultsWindow();
+  });
+
   $('body').append('<div id="MSearchClose"></div>');
   $('body').append('<div id="MSearchBox"></div>');
   $('body').append('<div id="MSearchSelectWindow"></div>');
@@ -142,8 +147,11 @@ $( document ).ready(function() {
   searchBox.DOMSearchField = function() {
     return document.getElementById("search-field");
   }
+  searchBox.DOMSearchClose = function(){
+    return document.getElementById("search-close");
+  }
 
-  
+
   /* enumerations */
   $('table.fieldtable').removeClass('fieldtable').addClass('table table-striped table-bordered').each(function(){
     $(this).prepend('<thead></thead>');
@@ -180,7 +188,7 @@ $( document ).ready(function() {
 	$("a.el").removeClass('el');
 	$("div.ah").removeClass('ah');
 	$("div.header").removeClass("header");
-	
+
 	$('.mdescLeft').each(function(){
 		if($(this).html()=="&nbsp;") {
 			$(this).siblings('.mdescRight').attr('colspan', 2);
