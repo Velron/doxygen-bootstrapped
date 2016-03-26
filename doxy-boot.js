@@ -101,6 +101,7 @@ $( document ).ready(function() {
   for (i = 0; i < 6; i++) {
     var navrow = $('#navrow' + i + ' > ul.tablist').detach();
     left_nav.append(navrow);
+    $('#navrow' + i).remove();
   }
   var right_nav = $('<div class="col-md-3"></div>').append('\
     <div id="search-box" class="input-group">\
