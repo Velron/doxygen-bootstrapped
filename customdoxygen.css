@@ -293,3 +293,14 @@ iframe#MSearchResults {
 .memItemLeft, .memTemplItemLeft {
   white-space: normal;
 }
+
+/* enumerations */
+.panel-body thead > tr {
+  background-color: #e0e0e0;
+}
+
+/* todo lists */
+.todoname,
+.todoname a {
+  font-weight: bold;
+}
