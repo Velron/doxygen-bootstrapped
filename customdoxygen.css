@@ -306,7 +306,11 @@ span.SRScope {
   height: 16px;
 }
 .directory .icondoc {
-  background-position: 0px -2px;
+  background-position: 0px 0px;
+  height: 20px;
+}
+.directory .iconfopen {
+  background-position: 0px 0px;
 }
 .directory td.entry {
   padding: 7px 8px 6px 8px;
