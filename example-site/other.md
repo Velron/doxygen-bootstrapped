@@ -1,3 +1,0 @@
-# Testing {#testing}
-
-Hello world!
