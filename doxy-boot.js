@@ -170,6 +170,44 @@ $( document ).ready(function() {
     return document.getElementById("search-results-window");
   }
 
+  function update_search_results_window() {
+    $('#search-results-window').removeClass('panel-default panel-success panel-warning panel-danger')
+    var status = $('#MSearchResults').contents().find('.SRStatus:visible');
+    if (status.length > 0) {
+      switch(status.attr('id')) {
+        case 'Loading':
+        case 'Searching':
+          $('#search-results-window').addClass('panel-warning');
+          break;
+        case 'NoMatches':
+          $('#search-results-window').addClass('panel-danger');
+          break;
+        default:
+          $('#search-results-window').addClass('panel-default');
+      }
+    } else {
+      $('#search-results-window').addClass('panel-success');
+    }
+  }
+  $('#MSearchResults').load(function() {
+    $('#MSearchResults').contents().find('link[href="search.css"]').attr('href','../doxygen.css');
+    $('#MSearchResults').contents().find('head').append(
+      '<link href="../customdoxygen.css" rel="stylesheet" type="text/css">');
+
+    update_search_results_window();
+
+    // detect status changes (only for search with external search backend)
+    var observer = new MutationObserver(function(mutations) {
+      update_search_results_window();
+    });
+    var config = { attributes: true};
+
+    var targets = $('#MSearchResults').contents().find('.SRStatus');
+    for (i = 0; i < targets.length; i++) {
+      observer.observe(targets[i], config);
+    }
+  });
+
 
   /* enumerations */
   $('table.fieldtable').removeClass('fieldtable').addClass('table table-striped table-bordered').each(function(){
