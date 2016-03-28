@@ -41,6 +41,8 @@ We have also modified the HTML header/footer to load the Bootstrap css/javascrip
 <script type="text/javascript" src="doxy-boot.js"></script>
 ```
 
+See the example-site directory for a minimal working example.
+
 ## Todo List
 * Menu is not correctly displayed when Doxygen sidebar is enabled.
 * Class index is incorrectly displayed.

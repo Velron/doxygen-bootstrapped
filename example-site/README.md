@@ -1,4 +1,16 @@
-# How to Integrate
+# Example project
+
+This is a minimal working example, to get you started with this stylesheet easier.
+
+## How to run this example
+
+Just run
+
+    doxygen Doxyfile
+
+within this folder and the documentation for this minimal example will be generated in Doc/html.
+
+## How to Integrate
 
 This is easy to integrate into your own doxyfile. Simply tell your doxyfile to use these 3 files in the HTML section:
 
@@ -13,4 +25,4 @@ You should also copy `doxy-boot.js` into your `html` directory, else it won't be
 
 ## Note
 
-This hasn't been tested with the search box functionality or with the Doxygen sidebar.
+This hasn't been tested with the Doxygen sidebar.
