@@ -329,3 +329,21 @@ span.SRScope {
 .todoname a {
   font-weight: bold;
 }
+
+/* Class title */
+.summary {
+  margin-top: 25px;
+}
+.page-header {
+  margin: 20px 0px !important;
+}
+.page-header .title {
+  display: inline-block;
+}
+.page-header .pull-right {
+  margin-top: 0.3em;
+  margin-left: 0.5em;
+}
+.page-header .label {
+  font-size: 50%;
+}
