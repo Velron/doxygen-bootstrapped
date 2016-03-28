@@ -273,8 +273,28 @@ blockquote {
 }
 
 iframe#MSearchResults {
-    width: 100%;
-    height: 15em;
+  width: 100%;
+  height: 15em;
+}
+
+.SRChildren {
+  padding-left: 3ex; padding-bottom: .5em
+}
+.SRPage .SRChildren {
+  display: none;
+}
+a.SRScope {
+  display: block;
+}
+a.SRSymbol:focus, a.SRSymbol:active,
+a.SRScope:focus, a.SRScope:active {
+  text-decoration: underline;
+}
+span.SRScope {
+  padding-left: 4px;
+}
+.SRResult {
+  display: none;
 }
 
 /* class and file list */
