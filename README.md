@@ -5,7 +5,7 @@ Customize doxygen (v1.8.8) output to use the twitter bootstrap framework (v3.2.0
 
 [Demo](https://biogearsengine.com/documentation/index.html)
 
-I took the work done by CoActionOS and extended it further. 
+I took the work done by CoActionOS and extended it further.
 [Credit](http://coactionos.com/embedded%20design%20tips/2014/01/07/Tips-Integrating-Doxygen-and-Bootstrap/)
 
 # Customizing Doxygen
@@ -14,7 +14,7 @@ Doxygen provides for a handful of ways to [customize the output](http://www.stac
 Doxygen allows you to customize the HTML output by modifying a master HTML header, footer, and stylesheet. The following command will generate the default Doxygen HTML files.
 
 `doxygen -w html header.html footer.html customdoxygen.css`
- 
+
 Modifying these files alone is not enough to get good Twitter Bootstrap integration. Bootstrap requires that certain classes be applied within the HTML. For example, a Bootstrap “table” needs to have a class called “table” in order to apply the Bootstrap table formatting. We just need to augment the default HTML with these Bootstrap classes. To do this, we use the provided doxy-boot.js javascript file.
 
 Also, you can augment doxygen’s default stylesheet with a customdoxygen.css stylesheet. This is where you would place any custom styling such as sticky footers.
@@ -41,5 +41,8 @@ We have also modified the HTML header/footer to load the Bootstrap css/javascrip
 <script type="text/javascript" src="doxy-boot.js"></script>
 ```
 
-## Note
-This hasn't been tested with the search box functionality or with the Doxygen sidebar.
+See the example-site directory for a minimal working example.
+
+## Todo List
+* Menu is not correctly displayed when Doxygen sidebar is enabled.
+* Class index is incorrectly displayed.
