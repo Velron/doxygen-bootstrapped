@@ -1,17 +1,17 @@
 doxygen-bootstrapped
 ===================
 
-Customize doxygen (v1.8.8) output to use the twitter bootstrap framework (v3.2.0)
+Customize doxygen (v1.8.9) output to use the twitter bootstrap framework (v3.3.1)
 
 [Demo](https://biogearsengine.com/documentation/index.html)
 
-I took the work done by CoActionOS and extended it further.
+This started as work done by CoActionOS and was extended further here.
 [Credit](http://coactionos.com/embedded%20design%20tips/2014/01/07/Tips-Integrating-Doxygen-and-Bootstrap/)
 
 # Customizing Doxygen
-Doxygen provides for a handful of ways to [customize the output](http://www.stack.nl/~dimitri/doxygen/manual/customize.html). The simplest way is to customize the HTML output.
+Doxygen provides a handful of ways to [customize the output](http://www.stack.nl/~dimitri/doxygen/manual/customize.html). The simplest way is to customize the HTML output.
 
-Doxygen allows you to customize the HTML output by modifying a master HTML header, footer, and stylesheet. The following command will generate the default Doxygen HTML files.
+Doxygen allows you to customize the HTML output by modifying a master HTML header, footer and stylesheet. You can then include additional stylesheets and javascript files. The following command will generate the default Doxygen files.
 
 `doxygen -w html header.html footer.html customdoxygen.css`
 
@@ -21,25 +21,19 @@ Also, you can augment doxygen’s default stylesheet with a customdoxygen.css st
 
 # How to Integrate
 
-This is easy to integrate into your own doxyfile. Simply tell your doxyfile to use these 3 files in the HTML section (see the example site for an example of each file):
+To integrate this into your own project tell your doxyfile to use these 4 files in the HTML section (see the example site for an example of each file):
 
 * HTML_HEADER=header.html
-    * Adds a simple Bootstrap navbar for the title
-    * Wraps the content in a Bootstrap container/row combo
+    * Adds a Bootstrap navbar
+    * Wraps the content in a Bootstrap container/row
 * HTML_FOOTER=footer.html
-    * Simply closes the extra divs opened in the header.html
-* HTML_EXTRA_STYLESHEET=customdoxygen.css
+    * Closes the extra divs opened in the header.html
+* HTML\_EXTRA_STYLESHEET=customdoxygen.css
+    * Adds additional styling such as a sticky footer   
+* HTML\_EXTRA_FILES=doxy-boot.js
+    * Where the magic happens to augment the HTML with bootstrap
 
-You should also copy `doxy-boot.js` into your `html` directory, else it won't be found.
-
-We have also modified the HTML header/footer to load the Bootstrap css/javascript and our custom javascript (doxy-boot.js). This is where you can specify your own bootstrap compilation. These files will also need to be placed in the html directory (or sub-directory) else they wont be found.
-
-```
-<link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
-<script src="bootstrap3/js/jquery-2.0.3.min.js"></script>
-<script src="bootstrap3/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="doxy-boot.js"></script>
-```
+NOTE: The header.html file needs to include the Bootstrap css/javascript for this to work. This is where you can specify your own bootstrap compilation. These files will need to be manually added to the html directory, added as additional files in the doxyfile HTML\_EXTRA_FILES section or referenced externally (see example site header.html).
 
 See the example-site directory for a minimal working example.
 
