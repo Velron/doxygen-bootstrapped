@@ -39,4 +39,3 @@ See the example-site directory for a minimal working example.
 
 ## Todo List
 * Menu is not correctly displayed when Doxygen sidebar is enabled.
-* Class index is incorrectly displayed.
