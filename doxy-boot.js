@@ -77,6 +77,11 @@ $( document ).ready(function() {
         $(this).siblings('.memItemLeft').attr('align', 'left');
     });
 
+    $('table.memberdecls').find('.memTemplItemRight').each(function(){
+        $(this).contents().appendTo($(this).siblings('.memTemplItemLeft'));
+        $(this).siblings('.memTemplItemLeft').attr('align', 'left');
+    });
+
 	function getOriginalWidthOfImg(img_element) {
 		var t = new Image();
 		t.src = (img_element.getAttribute ? img_element.getAttribute("src") : false) || img_element.src;
@@ -250,10 +255,16 @@ $( document ).ready(function() {
 			$(this).remove();
 		}
 	});
-	$('td.memItemLeft').each(function(){
-		if($(this).siblings('.memItemRight').html()=="") {
+  $('td.memItemLeft').each(function(){
+    if($(this).siblings('.memItemRight').html()=="") {
+      $(this).attr('colspan', 2);
+      $(this).siblings('.memItemRight').remove();
+    }
+  });
+	$('td.memTemplItemLeft').each(function(){
+		if($(this).siblings('.memTemplItemRight').html()=="") {
 			$(this).attr('colspan', 2);
-			$(this).siblings('.memItemRight').remove();
+			$(this).siblings('.memTemplItemRight').remove();
 		}
 	});
 });
