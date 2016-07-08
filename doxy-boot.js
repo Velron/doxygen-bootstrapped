@@ -267,4 +267,5 @@ $( document ).ready(function() {
 			$(this).siblings('.memTemplItemRight').remove();
 		}
 	});
+  searchBox.CloseResultsWindow();
 });
