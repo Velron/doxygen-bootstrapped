@@ -26,7 +26,7 @@ $( document ).ready(function() {
     $("#nav-path > ul").addClass("breadcrumb");
 
     $("table.params").addClass("table");
-    $("div.ingroups").wrapInner("<small></small>");
+    $("div.ingroups").wrapInner("<span class='text-nowrap'></span>");
     $("div.levels").css("margin", "0.5em");
     $("div.levels > span").addClass("btn btn-default btn-xs");
     $("div.levels > span").css("margin-right", "0.25em");
@@ -92,8 +92,8 @@ $( document ).ready(function() {
 		if(getOriginalWidthOfImg($(this)[0]) > $('#content>div.container').width())
 			$(this).css('width', '100%');
 	});
-	
-  
+
+
   /* responsive search box */
   $('#MSearchBox').parent().remove();
 
