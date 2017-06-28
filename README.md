@@ -1,7 +1,11 @@
 doxygen-bootstrapped
 ===================
 
-Customize doxygen (v1.8.9) output to use the twitter bootstrap framework (v3.3.1)
+Customize doxygen (v1.8.13) output to use the twitter bootstrap framework (v3.3.6). 
+
+*This fork is aiminig to provide support for doxygen 1.8.12+ which changed the
+way that the menus are structured and move to smartmenus. This is work in
+progress and should not be used right now.*
 
 [Demo](https://biogearsengine.com/documentation/index.html)
 
