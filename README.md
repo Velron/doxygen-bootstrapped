@@ -5,8 +5,8 @@ Customize doxygen (v1.8.9) output to use the twitter bootstrap framework (v3.3.1
 
 [Demo](https://biogearsengine.com/documentation/index.html)
 
-This started as work done by CoActionOS and was extended further here.
-[Credit](http://coactionos.com/embedded%20design%20tips/2014/01/07/Tips-Integrating-Doxygen-and-Bootstrap/)
+This started as work done by Stratify Labs and was extended further here.
+[Credit](https://stratifylabs.co/embedded%20design%20tips/2014/01/07/Tips-Integrating-Doxygen-and-Bootstrap/)
 
 # Customizing Doxygen
 Doxygen provides a handful of ways to [customize the output](http://www.stack.nl/~dimitri/doxygen/manual/customize.html). The simplest way is to customize the HTML output.
