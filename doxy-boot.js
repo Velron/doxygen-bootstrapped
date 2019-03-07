@@ -268,4 +268,11 @@ $( document ).ready(function() {
 		}
 	});
   searchBox.CloseResultsWindow();
+
+  /* responsive images */
+  $('img').each(function() {
+    if ( !$(this).hasClass('footer')  && !this.id) {
+        $(this).addClass('img-responsive');
+    }
+  });
 });
